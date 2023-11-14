@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html data-bs-theme="light" lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Redirect - ShortLinkAgent</title>
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css?h=e03e0ab93c3f39bbde5c27d98953d31d">
+    <link rel="manifest" href="manifest.json?h=725f6c26ff71627bf1d6b80889af8f17">
+    <link rel="stylesheet" href="assets/css/Lato.css?h=aed0f48a9c61dc16407459bf2beb2783">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="assets/css/Login-Form-Basic-icons.css?h=befd8a398792e305b7ffd4a176b5b585">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand bg-light navigation-clean navbar-light">
+        <div class="container"><a class="navbar-brand" href="advanced_index.html">ShortLinkAgent</a><button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navcol-1"></button>
+            <div class="collapse navbar-collapse" id="navcol-1"></div>
+        </div>
+    </nav>
+    <div>
+        <div class="container">
+            <form style="margin: 20px;">
+                <div class="row">
+                    <div class="col">
+                        <h1 class="text-center">Your requested URL</h1>
+                    </div>
+                </div>
+                <div class="row" style="margin-top: 12px;margin-bottom: 12px;">
+                    <div class="col text-center">
+                        <!-- Start: original_url_link_value --><a class="fs-1 text-center" id="go-btn" href="#">Link</a><!-- End: original_url_link_value -->
+                    </div>
+                </div>
+                <div class="row d-flex d-sm-flex d-md-flex d-lg-flex d-xl-flex d-xxl-flex justify-content-center justify-content-sm-center justify-content-md-center justify-content-lg-center justify-content-xl-center justify-content-xxl-center" id="redirect-msg" style="margin-top: 12px;margin-bottom: 12px;">
+                    <div class="col" style="max-width: 75%;">
+                        <div class="alert alert-success text-center" role="alert" style="margin-top: 16px;"><span id="redirect-msg-text"><strong>Fetching the link...</strong></span></div>
+                    </div>
+                </div>
+                <div class="row d-flex d-sm-flex d-md-flex d-lg-flex d-xl-flex d-xxl-flex justify-content-center justify-content-sm-center justify-content-md-center justify-content-lg-center justify-content-xl-center justify-content-xxl-center" style="margin-top: 12px;margin-bottom: 12px;">
+                    <div class="col" style="max-width: 75%;">
+                        <form style="border-radius: 1px;border-width: 1px;">
+                            <div class="table-responsive">
+                                <table class="table">
+                                    <thead>
+                                        <tr>
+                                            <th>Original URL</th>
+                                            <th><input class="form-control-plaintext" type="text" id="original-url-box" value="Plain Text Value" readonly=""></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>Protected</td>
+                                            <td><input class="form-control-plaintext" type="text" id="protected-box" value="Plain Text Value" readonly=""></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Total Clicks</td>
+                                            <td><input class="form-control-plaintext" type="text" id="total-box" value="Plain Text Value" readonly=""></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Last Click</td>
+                                            <td><input class="form-control-plaintext" type="text" id="last-box" value="Plain Text Value" readonly=""></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Created By</td>
+                                            <td><input class="form-control-plaintext" type="text" id="created-by-box" value="Plain Text Value" readonly=""></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Created At</td>
+                                            <td><input class="form-control-plaintext" type="text" id="created-at-box" value="Plain Text Value" readonly=""></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <footer class="bg-light footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 text-center text-lg-start my-auto h-100">
+                    <ul class="list-inline mb-2">
+                        <li class="list-inline-item"><a href="#">About</a></li>
+                        <li class="list-inline-item"><span>⋅</span></li>
+                        <li class="list-inline-item"><a href="#">Contact</a></li>
+                        <li class="list-inline-item"><span>⋅</span></li>
+                        <li class="list-inline-item"><a href="#">Terms of &nbsp;Use</a></li>
+                        <li class="list-inline-item"><span>⋅</span></li>
+                        <li class="list-inline-item"><a href="#">Privacy Policy</a></li>
+                    </ul>
+                    <p class="text-muted small mb-4 mb-lg-0">© ShortLinkAgent 2023. All Rights Reserved.</p>
+                </div>
+                <div class="col-lg-6 text-center text-lg-end my-auto h-100">
+                    <ul class="list-inline mb-0">
+                        <li class="list-inline-item"><a href="#"><i class="fa fa-facebook fa-2x fa-fw"></i></a></li>
+                        <li class="list-inline-item"><a href="#"><i class="fa fa-twitter fa-2x fa-fw"></i></a></li>
+                        <li class="list-inline-item"><a href="#"><i class="fa fa-instagram fa-2x fa-fw"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/config.js?h=b77fbaed83f9789430a95d65f5d123df"></script>
+    <script src="assets/js/index.js?h=73a9baeedf4fb87c6dd41d0078233013"></script>
+    <script src="assets/js/pages/advanced_page.js?h=972b49f190839f1105a6e549e474c428"></script>
+    <script src="assets/js/pages/go_page.js?h=868611bd2907ae465968b1ac26174b5b"></script>
+    <script src="assets/js/pages/index_page.js?h=a5240a33f0507f2393ffd881de9dbf8b"></script>
+    <script src="assets/js/pages/login_page.js?h=004292500b5b9181acda99708a257e7d"></script>
+    <script src="assets/js/pages/maintaince_page.js?h=9f0be727d174f127623019d6ba4a35ad"></script>
+    <script src="assets/js/pages/notfound_page.js?h=f273e48ca1134c57d6d3f6a768cb6d7e"></script>
+    <script src="assets/js/pages/signup_page.js?h=50cb34e2fbdbd522a70d38aec00ac964"></script>
+    <script src="assets/js/utils/input_reader.js?h=9b8e63f44fba085daecdd15172ebdd66"></script>
+    <script src="assets/js/utils/session.js?h=1f186795990ab96b610f758c97e64ab3"></script>
+    <script src="assets/js/utils/tools.js?h=0f3df36e3e82adf59e248bc603b24798"></script>
+    <script src="assets/js/utils/url.js?h=3170910e2e7add5a644ec234d7c9e6c5"></script>
+    <script src="assets/js/utils/user.js?h=cb3c6e1096c2b92300764db3f1bc96ea"></script>
+</body>
+
+</html>
