@@ -37,7 +37,6 @@ async function Logout(force){
         return
     }
     eraseCookie("token")
-    eraseCookie("token")
-    alert("Logged out.")
+    eraseCookie("user_id")
     window.location.replace("index.html")
 }

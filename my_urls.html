@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <title>Signin - ShortLinkAgent</title>
+    <title>SLA-FE</title>
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css?h=e03e0ab93c3f39bbde5c27d98953d31d">
     <link rel="manifest" href="manifest.json?h=725f6c26ff71627bf1d6b80889af8f17">
     <link rel="stylesheet" href="assets/css/Lato.css?h=d53189f970f700d314dcd83357bcc4f4">
@@ -13,37 +13,51 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-expand bg-light navigation-clean navbar-light">
+    <nav class="navbar navbar-expand navigation-clean navbar-light">
         <div class="container"><a class="navbar-brand" href="index.html">ShortLinkAgent</a><button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navcol-1"></button>
-            <div class="collapse navbar-collapse" id="navcol-1"><a class="btn btn-primary ms-auto" role="button" href="signin.html">Sign In</a><a class="btn btn-link" role="button" href="signup.html">Sign Up</a></div>
-        </div>
-    </nav><!-- Start: Login Form Basic -->
-    <section class="position-relative py-4 py-xl-5">
-        <div class="container">
-            <div class="row mb-5">
-                <div class="col-md-8 col-xl-6 text-center mx-auto">
-                    <h2>Log in</h2>
-                    <p class="w-lg-50">Please login to continue</p>
-                </div>
-            </div>
-            <div class="row d-flex justify-content-center">
-                <div class="col-md-6 col-xl-4">
-                    <div class="card mb-5">
-                        <div class="card-body d-flex flex-column align-items-center">
-                            <div class="bs-icon-xl bs-icon-circle bs-icon-primary bs-icon my-4"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" class="bi bi-person">
-                                    <path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6Zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0Zm4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4Zm-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10Z"></path>
-                                </svg></div>
-                            <form class="text-center" method="post">
-                                <div class="mb-3"><input class="form-control" type="text" id="username-box" name="uername" placeholder="username"></div>
-                                <div class="mb-3"><input class="form-control" type="password" id="password-box" name="password" placeholder="Password"></div>
-                                <div class="mb-3"><button class="btn btn-primary d-block w-100" id="login-btn" type="button">Login</button></div><button class="btn" id="forgot-btn" type="button" style="max-height: 30px;padding: 0px;">Forgot your password?</button>
-                            </form>
-                        </div>
-                    </div>
+            <div class="collapse navbar-collapse" id="navcol-1">
+                <div class="dropdown d-xl-flex ms-auto justify-content-xl-end" style="text-align: right;"><a aria-expanded="false" data-bs-toggle="dropdown" id="username-label" href="#" style="display: block;position: sticky;text-align: right;">username</a>
+                    <div class="dropdown-menu dropdown-menu-end"><a class="dropdown-item" id="myurl-btn" href="#">My URLs</a><a class="dropdown-item" id="editinfo-btn" href="#">Edit infos</a><a class="dropdown-item" id="changepwd-btn" href="#">Change password</a><a class="dropdown-item" id="logout-btn" href="#">Logout</a><a class="dropdown-item" id="deleteaccount-btn" href="#">Delete account</a></div>
                 </div>
             </div>
         </div>
-    </section><!-- End: Login Form Basic -->
+    </nav>
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <h1 style="margin-top: 24px;">URL List</h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <p id="user-id-box">user_id: 1234567890</p>
+            </div>
+            <div class="col">
+                <p class="text-end" id="total-links-box">total_links: 0</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <div class="table-responsive">
+                    <table class="table table-striped">
+                        <thead>
+                            <tr class="text-break">
+                                <th>url id</th>
+                                <th>original url</th>
+                                <th>created at</th>
+                                <th>last access</th>
+                                <th>total clicks</th>
+                                <th>require login</th>
+                                <th>actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="table-body"></tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="row"></div>
+    </div>
     <footer class="bg-light footer">
         <div class="container">
             <div class="row">

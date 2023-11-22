@@ -37,6 +37,10 @@ window.onload = async function(){
         NotFoundPage()
         return
     }
+    if (page == "my_urls.html"){
+        MyUrlsPage()
+        return
+    }
 }
 
 async function BackgroundServerPing(){
