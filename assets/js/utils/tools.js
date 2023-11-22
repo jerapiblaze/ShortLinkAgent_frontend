@@ -22,7 +22,7 @@ async function CheckServerOnline(){
     try {
         const url = `${SERVER_ADDRESS}/`
         let serverOnline = true
-        let serverResponse = await call_server("ping", "GET", null, 100)
+        let serverResponse = await call_server("ping", "GET", null, 1000)
         return true
     } catch (e){
         return false

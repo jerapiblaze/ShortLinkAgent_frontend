@@ -15,7 +15,7 @@ async function NewSession(){
     let serverResponse = await call_server("session/login", "POST", requestBody)
     if (serverResponse.status != 200){
         alert("Login failed.")
-        window.location.replace("/signin.html")
+        window.location.replace("signin.html")
         return
     }
     let res = await serverResponse.json()
