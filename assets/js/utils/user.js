@@ -8,43 +8,6 @@ async function GetUserInfo(user_id){
     return res
 }
 
-async function ChangePassword(){
-    let old_pwd = prompt("Old password")
-    if (!old_pwd){
-        return
-    }
-    let new_pwd = null
-    let re_new_pwd = null
-    while (new_pwd != re_new_pwd || !re_new_pwd){
-        new_pwd = prompt("New password")
-        if (!new_pwd){
-            return
-        }
-        re_new_pwd = prompt("Confirm new password")
-    }
-    let info = {
-        hashed_password_old:old_pwd,
-        hashed_password_new:new_pwd
-    }
-    let serverResponse = await call_server("user/changepwd", "PUT", info)
-    if (serverResponse.status != 200){
-        alert("Error.")
-        return
-    }
-    Logout(force=true)
-}
-
-async function NewUser(){
-    let info = get_signup_input()
-    let serverResponse = await call_server("user", "POST", info)
-    if (serverResponse.status != 200){
-        alert("Error.")
-        return
-    }
-    alert("Account created!")
-    window.location.replace("signin.html")
-}
-
 async function DeleteUser(){
     let user_id = getCookie("user_id")
     let user_id_input = null

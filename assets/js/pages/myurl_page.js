@@ -3,14 +3,8 @@ async function MyUrlsPage(){
         window.location.replace("index.html")
         return
     }
-    let userInfo = await GetUserInfo()
-    document.getElementById("username-label").innerHTML = userInfo.fullname
-    document.getElementById("logout-btn").onclick = Logout
-    document.getElementById("changepwd-btn").onclick = ChangePassword
-    document.getElementById("deleteaccount-btn").onclick = DeleteUser
-    document.getElementById("myurl-btn").onclick = function(){
-        window.location.href = "my_urls.html"
-    }
+    await NavBar();
+    let userInfo = await GetUserInfo();
     document.getElementById("user-id-box").innerHTML = `User: <strong>${userInfo.fullname}</strong> (<small><i>${userInfo.user_id})</i></small>`
     
     let url_infos = await GetURLByUserId(userInfo.user_id)
@@ -30,7 +24,7 @@ function FormatUrlListAsTable(url_infos){
     for (let url of url_infos){
         output += `
 <tr class="text-break" style="word-wrap:break-all">
-    <td style="width:15% word-wrap:break-all" class="font-monospace" col-name="url_id"><a href="${WEB_ADDRESS}/?l=${url.url_id}"">${url.url_id}</td>
+    <td style="width:15% word-wrap:break-all" class="font-monospace" col-name="url_id"><a href="${WEB_ADDRESS}/?l=${url.url_id}" target="_blank">${url.url_id}</td>
     <td style="width:35% word-wrap:break-all" class="font-monospace" col-name="original_url">${url.original_url}</td>
     <td style="width:15% word-wrap:break-all" class="font-monospace" col-name="created_at">${url.stats.createdAt.replace("T", " ")}</td>
     <td style="width:15% word-wrap:break-all" class="font-monospace" col-name="last_access">${url.stats.updatedAt.replace("T", " ")}</td>
@@ -65,5 +59,18 @@ async function GenerateDeleteFunction(url_id){
     }
     if (result == null){
         return
+    }
+}
+
+async function DeleteURL(url_id){
+    if (!confirm(`Delete url: ${url_id}`)) {
+        return null
+    }
+    let endpoint = `url/?l=${url_id}`
+    let serverResponse = await call_server(endpoint, "DELETE")
+    if (serverResponse.status != 200){
+        return false
+    } else {
+        return true
     }
 }

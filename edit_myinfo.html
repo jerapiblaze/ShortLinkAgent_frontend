@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html data-bs-theme="light" lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>SLA-FE</title>
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css?h=e03e0ab93c3f39bbde5c27d98953d31d">
+    <link rel="manifest" href="manifest.json?h=725f6c26ff71627bf1d6b80889af8f17">
+    <link rel="stylesheet" href="assets/css/Lato.css?h=5fb76c96473c2ec82d3bdbad37a820f5">
+    <link rel="stylesheet" href="assets/fonts/font-awesome.min.css?h=d98553506d4393860db8a633e4842ead">
+    <link rel="stylesheet" href="assets/css/Login-Form-Basic-icons.css?h=befd8a398792e305b7ffd4a176b5b585">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand navigation-clean navbar-light fixed-top">
+        <div class="container"><a class="navbar-brand" href="index.html">ShortLinkAgent</a><button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navcol-1"></button>
+            <div class="collapse navbar-collapse" id="navcol-1">
+                <div class="dropdown d-xl-flex ms-auto justify-content-xl-end" style="text-align: right;"><a aria-expanded="false" data-bs-toggle="dropdown" id="username-label" href="#" style="display: block;position: sticky;text-align: right;">username</a>
+                    <div class="dropdown-menu dropdown-menu-end"><a class="dropdown-item" id="myurl-btn" href="#">My URLs</a><a class="dropdown-item" id="editinfo-btn" href="#">My account</a><a class="dropdown-item" id="logout-btn" href="#">Logout</a></div>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <div class="container" style="margin-bottom: 20px;padding-bottom: 20px4;margin-top: 70px;">
+        <h1>My account</h1>
+        <div class="row">
+            <div class="col">
+                <div>
+                    <ul class="nav nav-tabs" role="tablist">
+                        <li class="nav-item" role="presentation"><a class="nav-link active" role="tab" data-bs-toggle="tab" href="#tab-1">My infomation</a></li>
+                        <li class="nav-item" role="presentation"><a class="nav-link" role="tab" data-bs-toggle="tab" href="#tab-2">Change my info</a></li>
+                        <li class="nav-item" role="presentation"><a class="nav-link" role="tab" data-bs-toggle="tab" href="#tab-3">Security settings</a></li>
+                        <li class="nav-item" role="presentation"><a class="nav-link" role="tab" data-bs-toggle="tab" href="#tab-4">Delete my account</a></li>
+                    </ul>
+                    <div class="tab-content">
+                        <div class="tab-pane active" role="tabpanel" id="tab-1">
+                            <div class="row" style="text-align: center;">
+                                <div class="col">
+                                    <form style="padding: 20px;margin: 20px;border-radius: 10px;border-width: 1px;border-style: ridge;padding-right: 40px;padding-left: 40px;max-width: 100%;text-align: left;">
+                                        <div class="row" style="margin-bottom: 8px;">
+                                            <div class="col">
+                                                <h4>Infomation</h4>
+                                            </div>
+                                        </div>
+                                        <div class="row" style="margin-bottom: 8px;">
+                                            <div class="col">
+                                                <p style="margin: 0px;">Fullname</p><input class="form-control" type="text" id="fullname-box" readonly="" disabled="" value="User name in complete version.">
+                                            </div>
+                                            <div class="col">
+                                                <p style="margin: 0px;">UID</p><input class="form-control" type="text" id="uid-box" readonly="" disabled="" value="User name in system.">
+                                            </div>
+                                        </div>
+                                        <div class="row" style="margin-bottom: 8px;">
+                                            <div class="col">
+                                                <p style="margin: 0px;">Protection level</p><input class="form-control" type="text" id="protect-box" readonly="" disabled="" value="User name in complete version.">
+                                            </div>
+                                            <div class="col">
+                                                <p style="margin: 0px;">Account creation date</p><input class="form-control" type="text" id="created-box" readonly="" disabled="" value="User name in system.">
+                                            </div>
+                                        </div>
+                                        <div class="row" style="margin-bottom: 8px;">
+                                            <div class="col">
+                                                <p style="margin: 0px;">Avatar string</p><input class="form-control" type="text" id="avatar-box" readonly="" disabled="" value="username">
+                                            </div>
+                                        </div>
+                                        <div class="row" style="margin-bottom: 8px;">
+                                            <div class="col">
+                                                <p style="margin: 0px;">Token</p><input class="form-control" type="text" id="token-box" readonly="" disabled="" value="username">
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane" role="tabpanel" id="tab-2">
+                            <div class="row" style="text-align: center;">
+                                <div class="col">
+                                    <form style="padding: 20px;margin: 20px;border-radius: 10px;border-width: 1px;border-style: ridge;padding-right: 40px;padding-left: 40px;max-width: 100%;">
+                                        <div class="row" style="margin-bottom: 8px;">
+                                            <div class="col">
+                                                <h4 style="text-align: left;">Edit info</h4>
+                                            </div>
+                                        </div>
+                                        <div class="row" style="margin-bottom: 8px;">
+                                            <div class="col">
+                                                <p class="text-start" style="margin: 0px;">Fullname</p><input class="form-control" type="text" id="fullname-input">
+                                            </div>
+                                        </div>
+                                        <div class="row" style="margin-bottom: 8px;">
+                                            <div class="col">
+                                                <p class="text-start" style="margin: 0px;">Avatar</p><input class="form-control" type="text" id="avatar-input">
+                                            </div>
+                                        </div>
+                                        <div class="row" style="margin-bottom: 8px;">
+                                            <div class="col">
+                                                <p class="text-start" style="margin: 0px;">Protection level</p><select class="form-select" id="protect-input">
+                                                    <option value="null">No Protection</option>
+                                                    <option value="true">Protected</option>
+                                                    <option value="false">Un-protected</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="row" style="margin-bottom: 8px;">
+                                            <div class="col text-end" style="text-align: center;"><button class="btn btn-primary" id="save-btn" type="button" style="margin-top: 8px;min-width: 100%;">Save</button></div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane" role="tabpanel" id="tab-3">
+                            <div class="row" style="text-align: center;">
+                                <div class="col">
+                                    <form style="padding: 20px;margin: 20px;border-radius: 10px;border-width: 1px;border-style: ridge;padding-right: 40px;padding-left: 40px;max-width: 100%;">
+                                        <div class="row" style="margin-bottom: 8px;">
+                                            <div class="col">
+                                                <h4 style="text-align: left;">Password change</h4>
+                                            </div>
+                                        </div>
+                                        <div class="row" style="margin-bottom: 8px;">
+                                            <div class="col">
+                                                <p class="text-start" style="margin: 0px;">Old password</p><input class="form-control" type="password" id="oldpwd-input" required="">
+                                            </div>
+                                        </div>
+                                        <div class="row" style="margin-bottom: 8px;">
+                                            <div class="col">
+                                                <p class="text-start" style="margin: 0px;">New password</p><input class="form-control" type="password" id="newpwd-input" required="">
+                                            </div>
+                                        </div>
+                                        <div class="row" style="margin-bottom: 8px;">
+                                            <div class="col">
+                                                <p class="text-start" style="margin: 0px;">Confirm new password</p><input class="form-control" type="password" id="cf-newpwd-input" required="">
+                                            </div>
+                                        </div>
+                                        <div class="row" style="margin-bottom: 8px;">
+                                            <div class="col text-end" style="text-align: center;"><button class="btn btn-warning" id="changepwd-submit-btn" type="button" style="margin-top: 8px;min-width: 100%;">I'm ready to be self-kicked out!</button></div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane" role="tabpanel" id="tab-4">
+                            <div class="row" style="text-align: center;">
+                                <div class="col">
+                                    <form style="padding: 20px;margin: 20px;border-radius: 10px;border-width: 1px;border-style: ridge;padding-right: 40px;padding-left: 40px;max-width: 100%;">
+                                        <div class="row" style="margin-bottom: 8px;">
+                                            <div class="col">
+                                                <h4 style="text-align: left;">Delete account</h4>
+                                            </div>
+                                        </div>
+                                        <div class="row" style="margin-bottom: 8px;">
+                                            <div class="col">
+                                                <p class="text-start" style="margin: 0px;">Password</p><input class="form-control" type="password" id="pwd-input">
+                                            </div>
+                                        </div>
+                                        <div class="row" style="margin-bottom: 8px;">
+                                            <div class="col">
+                                                <p class="text-start" style="margin: 0px;">Re-type password</p><input class="form-control" type="password" id="re-pwd-input">
+                                            </div>
+                                        </div>
+                                        <div class="row" style="margin-bottom: 8px;">
+                                            <div class="col">
+                                                <p class="text-start" style="margin: 0px;">Confirmation</p><select class="form-select" id="del-cf-input">
+                                                    <option value="0" selected="">No, I dont think I will delete my account.</option>
+                                                    <option value="1">Yes, please delete my account.</option>
+                                                    <option value="2">Yes, destroy my data as well.</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="row" style="margin-bottom: 8px;">
+                                            <div class="col text-end" style="text-align: center;"><button class="btn btn-danger" id="delete-account-btn" type="button" style="margin-top: 8px;min-width: 100%;">Just shut up and delete my account!</button></div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer class="bg-light footer footer w-100 py-3 position-absolute bottom-0 start-50 translate-middle-x">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 text-center text-lg-start my-auto h-100">
+                    <ul class="list-inline mb-2">
+                        <li class="list-inline-item"><a href="#">About</a></li>
+                        <li class="list-inline-item"><span>⋅</span></li>
+                        <li class="list-inline-item"><a href="#">Contact</a></li>
+                        <li class="list-inline-item"><span>⋅</span></li>
+                        <li class="list-inline-item"><a href="#">Terms of &nbsp;Use</a></li>
+                        <li class="list-inline-item"><span>⋅</span></li>
+                        <li class="list-inline-item"><a href="#">Privacy Policy</a></li>
+                    </ul>
+                    <p class="text-muted small mb-4 mb-lg-0">© ShortLinkAgent 2023. All Rights Reserved.</p>
+                </div>
+                <div class="col-lg-6 text-center text-lg-end my-auto h-100">
+                    <ul class="list-inline mb-0">
+                        <li class="list-inline-item"><a href="#"><i class="fa fa-facebook fa-2x fa-fw"></i></a></li>
+                        <li class="list-inline-item"><a href="#"><i class="fa fa-twitter fa-2x fa-fw"></i></a></li>
+                        <li class="list-inline-item"><a href="#"><i class="fa fa-instagram fa-2x fa-fw"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="assets/bootstrap/js/bootstrap.min.js?h=e55bde7d6e36ebf17ba0b8c1e80e4065"></script>
+    <script src="assets/js/config.js?h=b77fbaed83f9789430a95d65f5d123df"></script>
+    <script src="assets/js/index.js?h=3ad496aa983c2bb78a87bfa52af66da3"></script>
+    <script src="assets/js/pages/_common.js?h=eadc4daebb3bb6dbf3297637dc2e4fdd"></script>
+    <script src="assets/js/pages/advanced_page.js?h=4b247589fbab5e4452b20ac3ffeb2524"></script>
+    <script src="assets/js/pages/editmyinfo_page.js?h=481bc7d655428e73c574e11ff57154b7"></script>
+    <script src="assets/js/pages/go_page.js?h=9f9fcfeaa1cd63e07cd1f139a5c11d89"></script>
+    <script src="assets/js/pages/index_page.js?h=ba98c6387c3a8fc9f3bf31367c810e50"></script>
+    <script src="assets/js/pages/login_page.js?h=975e1bad4b35753b16e5edb1923d02a0"></script>
+    <script src="assets/js/pages/maintaince_page.js?h=9f0be727d174f127623019d6ba4a35ad"></script>
+    <script src="assets/js/pages/myurl_page.js?h=ecee4aafdd1d940fb318f1f29aa0c496"></script>
+    <script src="assets/js/pages/notfound_page.js?h=f273e48ca1134c57d6d3f6a768cb6d7e"></script>
+    <script src="assets/js/pages/signup_page.js?h=fdb9cfe0bab6d1486bf9065193f491de"></script>
+    <script src="assets/js/utils/session.js?h=1f39c3c8eaae5f569f4217db744ba050"></script>
+    <script src="assets/js/utils/tools.js?h=f2966d6d68a869543f9b83ddfa51b9f5"></script>
+    <script src="assets/js/utils/url.js?h=cb94e1f31ad56096f6ef8a4dba6f019d"></script>
+    <script src="assets/js/utils/user.js?h=7932f5439a43a40ba55536d38e276957"></script>
+</body>
+
+</html>

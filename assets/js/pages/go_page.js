@@ -26,7 +26,12 @@ async function GoPage(){
     last_box.setAttribute("value", result.url_stats.updatedAt)
     
     let created_by_box = document.getElementById("created-by-box")
-    created_by_box.setAttribute("value", result.url_info.user_id)
+    let user_info = await GetUserInfo(result.url_info.user_id)
+    if (!user_info){
+        created_by_box.setAttribute("value", "anonymous (guest)");  
+    } else {
+        created_by_box.setAttribute("value", `${user_info.fullname}`);
+    }
     
     let created_at_box = document.getElementById("created-at-box")
     created_at_box.setAttribute("value", result.url_info.createdAt)
