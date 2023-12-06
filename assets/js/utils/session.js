@@ -31,7 +31,8 @@ async function Logout(force){
         }
     }
     let token = getCookie("token")
-    let serverResponse = await call_server(`session/logout?token=${token}`, "DELETE")
+    let endpoint = force ? `session/force_logout?token=${token}` : `session/logout?token=${token}`
+    let serverResponse = await call_server(endpoint, "DELETE")
     if (serverResponse.status != 200){
         alert("Logout error")
         return
