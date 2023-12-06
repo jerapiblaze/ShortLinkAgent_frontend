@@ -2,6 +2,9 @@ async function GetUserInfo(user_id){
     let endpoint = user_id ? `user?u=${user_id}` : "user"
     let serverResponse = await call_server(endpoint, "GET")
     if (serverResponse.status != 200){
+        if (getCookie("token")){
+            clearCookie("token");
+        }
         return null
     }
     let res = await serverResponse.json()
