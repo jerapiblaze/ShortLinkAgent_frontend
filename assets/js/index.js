@@ -45,6 +45,10 @@ window.onload = async function(){
         EditMyInfoPage()
         return
     }
+    if (page.startsWith("edit_url.html")){
+        EditUrlPage()
+        return
+    }
 }
 
 async function BackgroundServerPing(){

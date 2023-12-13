@@ -7,7 +7,7 @@ async function EditMyInfoPage(){
     let userInfo = await GetUserInfo();
     document.getElementById("fullname-box").value = userInfo.fullname;
     document.getElementById("uid-box").value = userInfo.user_id;
-    document.getElementById("protect-box").value = userInfo.protect_level;
+    document.getElementById("protect-box").value = userInfo.protect_level == true ? "Protected" : userInfo.protect_level == false ? "Un-protected" : "No protection";
     document.getElementById("created-box").value = userInfo.createdAt;
     document.getElementById("avatar-box").value = JSON.stringify(userInfo.avatar);
     document.getElementById("token-box").value = getCookie("token");
