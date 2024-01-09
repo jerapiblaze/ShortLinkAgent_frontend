@@ -25,7 +25,8 @@ function FormatUrlListAsTable(url_infos){
         output += `
 <tr class="text-break" style="word-wrap:break-all">
     <td style="width:15% word-wrap:break-all" class="font-monospace" col-name="url_id"><a href="goto.html?l=${url.url_id}" target="_blank">${url.url_id}</td>
-    <td style="width:35% word-wrap:break-all" class="font-monospace" col-name="original_url">${url.original_url}</td>
+    <td style="width:25% word-wrap:break-all" class="font-monospace" col-name="original_url">${url.original_url}</td>
+    <td style="width:10% word-wrap:break-all" class="font-monospace" col-name="notes">${url.notes ? url.notes : ""}</td>
     <td style="width:15% word-wrap:break-all" class="font-monospace" col-name="created_at">${url.stats.createdAt.replace("T", " ")}</td>
     <td style="width:15% word-wrap:break-all" class="font-monospace" col-name="last_access">${url.stats.updatedAt.replace("T", " ")}</td>
     <td style="width:5% word-wrap:break-all" class="font-monospace" col-name="total_clicks">${url.stats.total_clicks}</td>

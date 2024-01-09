@@ -21,6 +21,7 @@ async function EditUrlPage(){
     document.getElementById("urlid-box-edit").value = url_info.url_id
     
     document.getElementById("orginalurl-box-info").value = url_info.original_url
+    document.getElementById("notes-box-info").value = url_info.notes
     document.getElementById("protected-box-info").value = url_info.require_login ? "Logged in users" : "Everyone"
     document.getElementById("created-box-info").value = url_info.createdAt
     document.getElementById("modified-box-info").value = url_info.updatedAt
@@ -30,6 +31,8 @@ async function EditUrlPage(){
     document.getElementById("created-box-stats").value = url_stats.createdAt
     document.getElementById("modified-box-stats").value = url_stats.updatedAt
     
+    document.getElementById("notes-box-edit").placeholder = url_info.notes
+    document.getElementById("notes-box-edit").value = url_info.notes
     document.getElementById("protected-box-edit").value = url_info.require_login
     document.getElementById("edit-btn").onclick = DoEditUrl;
 }
@@ -49,7 +52,8 @@ async function DoEditUrl(){
 function GetEditInput(){
     let info = {
         url_id: document.getElementById("urlid-box-edit").value,
-        require_login: document.getElementById("protected-box-edit").value
+        require_login: document.getElementById("protected-box-edit").value,
+        notes: document.getElementById("notes-box-edit").value
     };
     return info;
 }

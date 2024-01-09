@@ -16,6 +16,9 @@ async function GoPage(){
     original_url_box.setAttribute("value", result.url_info.original_url)
     original_url_box.setAttribute("href", result.url_info.original_url)
     
+    let notes_box = document.getElementById("notes-box")
+    notes_box.setAttribute("value", result.url_info.notes ? result.url_info.notes : "")
+    
     let protected_box = document.getElementById("protected-box")
     protected_box.setAttribute("value", result.url_info.require_login)
     
