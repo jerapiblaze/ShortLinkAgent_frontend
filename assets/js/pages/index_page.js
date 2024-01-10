@@ -14,7 +14,7 @@ function get_url_input(){
     let original_url_value = original_url_box ? original_url_box.value : null
     let url_id_value = url_id_box ? url_id_box.value : null
     let require_login_value = require_login_checkbox ? require_login_checkbox.checked : false
-    let notes = notes_box.value
+    let notes = notes_box ? notes_box.value : null
     if (!original_url_value){
         alert("The URL field cannot be empty")
         throw "No input"
@@ -37,7 +37,7 @@ async function CreateNewURL(){
             alert(`Error: ${res.error}`)
             return
           }
-        let url_id = res.url_info.url_id
+        let url_id = res.custom_urlid.custom_id
         alert(`Your short url is: ${WEB_ADDRESS}/?l=${url_id}`)
         window.location.reload();
     }    

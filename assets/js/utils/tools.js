@@ -18,6 +18,15 @@ async function call_server(uri = "", method = "GET", body = null, timeout=5000) 
     return fetch(requestEndpoint, requestOptions)
 }
 
+function GetCustomIdList(url){
+    let custom_ids = []
+    for (let c of url.custom_urlids){
+        custom_ids.push(c.custom_id)
+    }
+    custom_ids = custom_ids.join(", ")
+    return custom_ids
+}
+
 async function CheckServerOnline(){
     try {
         const url = `${SERVER_ADDRESS}/`

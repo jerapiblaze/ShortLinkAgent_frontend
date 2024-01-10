@@ -9,27 +9,27 @@ async function GoPage(){
     }
     
     let go_btn = document.getElementById("go-btn")
-    go_btn.innerHTML = result.url_info.url_id
-    go_btn.setAttribute("href", result.url_info.original_url)
+    go_btn.innerHTML = url_id
+    go_btn.setAttribute("href", result.original_url)
     
     let original_url_box = document.getElementById("original-url-box")
-    original_url_box.setAttribute("value", result.url_info.original_url)
-    original_url_box.setAttribute("href", result.url_info.original_url)
+    original_url_box.setAttribute("value", result.original_url)
+    original_url_box.setAttribute("href", result.original_url)
     
     let notes_box = document.getElementById("notes-box")
-    notes_box.setAttribute("value", result.url_info.notes ? result.url_info.notes : "")
+    notes_box.setAttribute("value", result.notes ? result.notes : "")
     
     let protected_box = document.getElementById("protected-box")
-    protected_box.setAttribute("value", result.url_info.require_login)
+    protected_box.setAttribute("value", result.require_login)
     
     let total_box = document.getElementById("total-box")
-    total_box.setAttribute("value", result.url_stats.total_clicks)
+    total_box.setAttribute("value", result.url_stat.total_clicks)
     
     let last_box = document.getElementById("last-box")
-    last_box.setAttribute("value", result.url_stats.updatedAt)
+    last_box.setAttribute("value", result.url_stat.updatedAt)
     
     let created_by_box = document.getElementById("created-by-box")
-    let user_info = await GetUserInfo(result.url_info.user_id)
+    let user_info = await GetUserInfo(result.user_id)
     if (!user_info){
         created_by_box.setAttribute("value", "anonymous (guest)");  
     } else {
@@ -37,7 +37,7 @@ async function GoPage(){
     }
     
     let created_at_box = document.getElementById("created-at-box")
-    created_at_box.setAttribute("value", result.url_info.createdAt)
+    created_at_box.setAttribute("value", result.createdAt)
     
     let redirect_msg_text = document.getElementById("redirect-msg-text")
     for (let i = DEF_DELAY; i >= 0; i--){

@@ -20,16 +20,18 @@ async function MyUrlsPage(){
 }
 
 function FormatUrlListAsTable(url_infos){
+    console.log(url_infos[0])
     let output = ""
     for (let url of url_infos){
         output += `
 <tr class="text-break" style="word-wrap:break-all">
-    <td style="width:15% word-wrap:break-all" class="font-monospace" col-name="url_id"><a href="goto.html?l=${url.url_id}" target="_blank">${url.url_id}</td>
+    <td style="width:5% word-wrap:break-all" class="font-monospace" col-name="url_id"><a href="goto.html?l=${url.url_id}" target="_blank">${url.url_id}</td>
+    <td style="width:10% word-wrap:break-all" class="font-monospace" col-name="url_id">${GetCustomIdList(url)}</td>
     <td style="width:25% word-wrap:break-all" class="font-monospace" col-name="original_url">${url.original_url}</td>
     <td style="width:10% word-wrap:break-all" class="font-monospace" col-name="notes">${url.notes ? url.notes : ""}</td>
-    <td style="width:15% word-wrap:break-all" class="font-monospace" col-name="created_at">${url.stats.createdAt.replace("T", " ")}</td>
-    <td style="width:15% word-wrap:break-all" class="font-monospace" col-name="last_access">${url.stats.updatedAt.replace("T", " ")}</td>
-    <td style="width:5% word-wrap:break-all" class="font-monospace" col-name="total_clicks">${url.stats.total_clicks}</td>
+    <td style="width:15% word-wrap:break-all" class="font-monospace" col-name="created_at">${url.url_stat.createdAt.replace("T", " ")}</td>
+    <td style="width:15% word-wrap:break-all" class="font-monospace" col-name="last_access">${url.url_stat.updatedAt.replace("T", " ")}</td>
+    <td style="width:5% word-wrap:break-all" class="font-monospace" col-name="total_clicks">${url.url_stat.total_clicks}</td>
     <td style="width:5% word-wrap:break-all" class="font-monospace" col-name="protected">${url.require_login}</td>
     <td style="width:10%" col-name="actions"><button class="btn btn-info btn-sm" type="button" btn-label="detail_url" onclick="window.location.href='edit_url.html?l=${url.url_id}'">More</button><button class="btn btn-danger btn-sm" type="button" btn_label="delete_url" onclick="GenerateDeleteFunction('${url.url_id}');">Delete</button></td>
 </tr>
